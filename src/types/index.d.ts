@@ -1,3 +1,11 @@
 interface LayoutProps {
-    children: any
+  children: any;
+}
+
+interface AppContext {
+  pathname?: string;
+  req: any;
+  res: any;
+  reduxStore: any;
+  pathname?: string;
 }

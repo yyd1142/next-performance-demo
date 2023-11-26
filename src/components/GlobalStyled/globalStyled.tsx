@@ -2,6 +2,8 @@ import { memo } from 'react';
 import type { FC } from 'react';
 import { css, Global } from '@emotion/react';
 
+const CDN_URL = process.env.NEXT_PUBLIC_CDN_URL;
+
 interface GlobalStyledProps {
   sdk_id?: string;
 }
@@ -12,21 +14,21 @@ const GlobalStyles = (sdk_id: string) => {
       font-family: 'Inter UI';
       font-style: normal;
       font-display: swap;
-      src: ${`url('/assets/font/Inter/Inter-UI-Regular.woff2')`} format('woff2');
+      src: ${`url('${CDN_URL}/assets/font/Inter/Inter-UI-Regular.woff2')`} format('woff2');
     }
 
     @font-face {
       font-family: 'InterUI-Bold';
       font-style: normal;
       font-display: swap;
-      src: ${`url('/assets/font/Inter/Inter-UI-Bold.woff2')`} format('woff2');
+      src: ${`url('${CDN_URL}/assets/font/Inter/Inter-UI-Bold.woff2')`} format('woff2');
     }
 
     @font-face {
       font-family: 'InterUI-Medium';
       font-style: normal;
       font-display: swap;
-      src: ${`url('/assets/font/Inter/Inter-UI-Medium.woff2')`} format('woff2');
+      src: ${`url('${CDN_URL}/assets/font/Inter/Inter-UI-Medium.woff2')`} format('woff2');
     }
 
     *,

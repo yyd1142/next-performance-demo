@@ -1,5 +1,8 @@
 import { createTheme, ThemeOptions } from '@mui/material';
 
+/** H5 媒体查询 */
+export const H5_MEDIA = `@media screen and (max-width: ${960}px)`;
+
 export const themeConfig: ThemeOptions  = {
     palette: {
       primary: {
