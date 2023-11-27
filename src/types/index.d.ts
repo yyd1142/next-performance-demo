@@ -9,3 +9,9 @@ interface AppContext {
   reduxStore: any;
   pathname?: string;
 }
+
+interface ImageLoaderProps {
+  src: string;
+  width: number;
+  quality: number;
+}

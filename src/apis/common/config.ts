@@ -7,7 +7,6 @@ export const fetchAppData = async (ctx: AppContext) => {
   try {
     const { reduxStore, req } = ctx;
     const { dispatch } = reduxStore;
-    const state: State = reduxStore.getState();
     const requestHeaders: Headers = createHeadersByContext(req);
     // 获取导航栏数据
     const topNavBar = await commonApi.getTopNavBarList(requestHeaders);
@@ -17,6 +16,10 @@ export const fetchAppData = async (ctx: AppContext) => {
     // 获取基础配置
     const config = await commonApi.getMallBaseConfig(requestHeaders);
     dispatch(actions.setMallBaseConfig(config?.data));
+
+    // 获取底部栏
+    const bottomBar = await commonApi.getBottomBarList(requestHeaders);
+    dispatch(actions.setBottomList(bottomBar?.data));
   } catch (error) {
     console.log(error);
   }

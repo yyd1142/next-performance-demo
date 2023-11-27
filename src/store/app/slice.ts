@@ -9,6 +9,7 @@ export const slice = createSlice({
     isMobile: true,
     deviceType: 'H5',
     navigationList: [],
+    bottomList: [],
   } as AppState,
   reducers: {
     setIsMobile: (state: AppState, { payload }) => {
@@ -16,6 +17,9 @@ export const slice = createSlice({
     },
     setNavigationList: (state: AppState, { payload }) => {
       state.navigationList = payload;
+    },
+    setBottomList: (state: AppState, { payload }) => {
+      state.bottomList = payload;
     },
     setDeviceType: (state: AppState, { payload }) => {
       state.deviceType = payload;

@@ -65,30 +65,6 @@ const nextConfig = {
     ];
   },
   webpack: (config, { buildId, isServer, webpack }) => {
-    // Client webpack conifg
-    if (!isServer) {
-      // Attention: It must be placed after terserplugin, otherwise the generated annotation description will be cleared by terserplugin or other compression plug-ins
-      if (isProd && pkg) {
-        config.optimization.splitChunks.cacheGroups = {
-          ...config.optimization.splitChunks.cacheGroups,
-        };
-
-        // Automatic injection of copyright annotation information
-        config.optimization.minimizer.push(
-          new BannerPlugin({
-            banner: `/*!\n *  @name: ${pkg.name} \n *  @author: ${
-              pkg.author
-            } \n *  @date: ${dateformat(
-              new Date(),
-              'UTC:dddd, mmmm dS, yyyy, h:MM:ss TT'
-            )} \n *  @version: ${pkg.version} \n *  @license: ${pkg.license} \n *  @copyright: ${
-              pkg.copyright
-            } \n */\n`,
-          })
-        );
-      }
-    }
-
     // Sentry webpack tree shaking
     config.plugins.push(
       new webpack.DefinePlugin({
@@ -96,6 +72,34 @@ const nextConfig = {
         __SENTRY_TRACING__: false,
       })
     );
+
+    if (!isServer) {
+      // Attention: It must be placed after terserplugin, otherwise the generated annotation description will be cleared by terserplugin or other compression plug-ins
+      if (isProd) {
+        config.optimization.splitChunks.cacheGroups = {
+          runtime: {
+            chunks: 'all',
+            name: 'runtime',
+            test: /[\\/]node_modules[\\/](redux-logger|redux|@reduxjs\/toolkit|react-redux|@emotion\/cache|@emotion\/react|@emotion\/styled|axios|dayjs|immer|qs)[\\/]/,
+            priority: 90,
+            enforce: true,
+            reuseExistingChunk: true,
+          },
+          mui: {
+            name: 'mui',
+            test: /[\\/]node_modules[\\/]@mui\/material[\\/]/,
+            chunks: 'all',
+            priority: 3,
+            minSize: 300000,
+            maxSize: 600000,
+            reuseExistingChunk: true,
+            enforce: true,
+          },
+          ...config.optimization.splitChunks.cacheGroups,
+        };
+      }
+    }
+
     // Important: return the modified config
     return config;
   },

@@ -9,4 +9,8 @@ export const commonApi = {
   getMallBaseConfig: (headers?: Headers) => {
     return $get('/config/api/systemParameters/getMallConfig', { headers });
   },
+  /** 底部栏列表 */
+  getBottomBarList: (headers?: Headers) => {
+    return $get('/config/api/bottomBar/list', { headers });
+  },
 };

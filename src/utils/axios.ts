@@ -1,5 +1,4 @@
 import axios from 'axios';
-import isObject from 'lodash/isObject';
 import qs from 'qs';
 import { axiosConfig } from 'src/config';
 import type { CreateAxiosDefaults, AxiosRequestConfig } from 'axios';
