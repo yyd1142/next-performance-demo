@@ -1,1 +1,1 @@
-export { default as AppFooterBar } from './appFooterBar';
+export { default } from './appFooterBar';

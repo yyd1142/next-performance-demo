@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { FC, useState } from 'react';
-import { AppMenuDrawer } from '../AppMenuDrawer';
+import AppMenuDrawer from 'src/components/AppMenuDrawer';
 
 const AppHeaderBar: FC = () => {
   const [openDrawer, setOpenDrawer] = useState(false);

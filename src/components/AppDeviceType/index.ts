@@ -1,1 +1,1 @@
-export { default as AppDeviceType } from './appDeviceType';
+export { default } from './appDeviceType';

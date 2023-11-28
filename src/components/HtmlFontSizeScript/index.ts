@@ -1,1 +1,1 @@
-export { default as HtmlFontSizeScript } from './htmlFontSizeScript';
+export { default } from './htmlFontSizeScript';

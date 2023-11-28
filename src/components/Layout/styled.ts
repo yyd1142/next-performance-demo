@@ -2,5 +2,6 @@ import styled from '@emotion/styled';
 
 export const StyledContent = styled('div')`
   width: 100%;
-  height: 75vh;
+  min-height: 75vh;
+  margin-bottom: 30px;
 `;

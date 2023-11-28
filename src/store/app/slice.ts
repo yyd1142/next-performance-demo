@@ -10,6 +10,7 @@ export const slice = createSlice({
     deviceType: 'H5',
     navigationList: [],
     bottomList: [],
+    isShowFooterBar: false,
   } as AppState,
   reducers: {
     setIsMobile: (state: AppState, { payload }) => {
@@ -26,6 +27,9 @@ export const slice = createSlice({
     },
     setMallBaseConfig: (state: AppState, { payload }) => {
       state.mallBaseConfig = payload;
+    },
+    setIsShowFooter: (state: AppState, { payload }) => {
+      state.isShowFooterBar = payload;
     },
   },
 });

@@ -27,7 +27,7 @@ const ImageBanner: FC = () => {
   return (
     <StyledImageBanner>
       {banner.map((item) => (
-        <StyledLink key={item.id} href={item.url} prefetch>
+        <StyledLink key={item.id} href={item.url}>
           <StyledImage src={item.img} alt="" width={340} height={160} />
         </StyledLink>
       ))}

@@ -5,5 +5,6 @@ interface State {
     deviceType: string;
     navigationList: any[];
     bottomList: any[];
+    isShowFooterBar: boolean;
   };
 }

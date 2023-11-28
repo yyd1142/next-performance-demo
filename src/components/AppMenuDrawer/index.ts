@@ -1,1 +1,1 @@
-export { default as AppMenuDrawer } from './appMenuDrawer';
+export { default } from './appMenuDrawer';

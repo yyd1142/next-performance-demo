@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
-import { BaseImage } from '../BaseImage';
+import BaseImage from '../BaseImage';
 
 export const StyledImageBanner = styled('div')`
   width: 1440px;

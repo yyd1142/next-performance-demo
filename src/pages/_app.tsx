@@ -5,10 +5,10 @@ import { theme } from 'src/config';
 import { withRedux } from 'src/provider';
 import { fetchAppData } from 'src/apis';
 import { actions } from 'src/store/app';
-import { HtmlFontSizeScript } from 'src/components/HtmlFontSizeScript';
-import { AppDeviceType } from 'src/components/AppDeviceType';
-import { GlobalStyled } from 'src/components/GlobalStyled';
-import { Layout } from 'src/components/Layout';
+import HtmlFontSizeScript from 'src/components/HtmlFontSizeScript';
+import AppDeviceType from 'src/components/AppDeviceType';
+import GlobalStyled from 'src/components/GlobalStyled';
+import Layout from 'src/components/Layout';
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientEmotionCache = createEmotionCache();
