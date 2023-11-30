@@ -1,12 +1,10 @@
 import { FC, memo } from 'react';
 import { useSelector } from 'react-redux';
 import { StyledContent } from './styled';
-import dynamic from 'next/dynamic';
 import HeaderBar from 'src/components/HeaderBar';
 import FooterBar from 'src/components/FooterBar';
-
-const AppHeaderBar = dynamic(() => import('src/components/AppHeaderBar'));
-const AppFooterBar = dynamic(() => import('src/components/AppFooterBar'));
+import AppHeaderBar from 'src/components/AppHeaderBar';
+import AppFooterBar from 'src/components/AppFooterBar';
 
 const Layout: FC<LayoutProps> = ({ children }) => {
   const isMobile = useSelector((state: State) => state.app.isMobile);
@@ -18,7 +16,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
       {isMobile ? <AppHeaderBar /> : <HeaderBar />}
       <StyledContent>{children}</StyledContent>
       {/* 底部栏 */}
-      {isShowFooterBar && <>{isMobile ? <AppFooterBar /> : <FooterBar />}</>}
+      {<>{isMobile ? <AppFooterBar /> : <FooterBar />}</>}
     </div>
   );
 };

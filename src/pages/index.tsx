@@ -15,7 +15,7 @@ const HomePage: NextPage = () => {
     dispatch(actions.setIsShowFooter(true));
   };
   return (
-    <StyledHomeWrapper dataLength={2} next={handleLoadMore} hasMore={!open} loader={<></>}>
+    <StyledHomeWrapper>
       <SwiperBanner src="https://fr.olicdn.com/image/warrior-x-4-1440x500-1-hnayjf.jpg" />
       <SwiperBanner src="https://au.olicdn.com/image/new-xybs-ydgg-1440-q1espq.jpg" />
       {open && <ImageBanner />}

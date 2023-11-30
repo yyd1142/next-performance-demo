@@ -13,4 +13,4 @@ export const StyledImageBanner = styled('div')`
 
 export const StyledLink = styled(Link)``;
 
-export const StyledImage = styled(BaseImage)``;
+export const StyledImage = styled('img')``;

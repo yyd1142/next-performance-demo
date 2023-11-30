@@ -16,7 +16,7 @@ const SwiperBanner: FC<SwiperBannerProps> = ({ src }) => {
   // }, []);
   return (
     <StyledSwiperBanner>
-      {open && <BaseImage src={src} width={1400} height={600} quality={80} alt="" />}
+      {open && <img src={src} width={1400} height={600} alt="" />}
     </StyledSwiperBanner>
   );
 };
